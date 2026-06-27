@@ -24,5 +24,7 @@ Bad example (do NOT do this):
 
 Now generate queries for this claim: {claim}
 """
-    response = llm.invoke(prompt)
+    responses = llm.invoke(prompt)
+    response = responses.split("\n")
+
     return {"DecomposedClaims": response}
